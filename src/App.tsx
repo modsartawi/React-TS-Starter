@@ -1,17 +1,18 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Button from 'material-ui/Button';
+import Writer from './Writer.js';
 
-const  logo = require('./images/webpack-tuts.jpg');
+const logo = require('./images/webpack-tuts.jpg');
 import 'typeface-roboto';
 const root = document.getElementById('app');
 const App = () => (
   <div>
-    <Button >Click here</Button>
+    <Button>Click here</Button>
     <h1>Welcome, 123</h1>
     <h1 className="san">Welcome, 123</h1>
-    <img src={logo} style={{width:'200px'}} />
-    
+    <img src={logo} style={{ width: '200px' }} />
+    <Writer />
   </div>
 );
 

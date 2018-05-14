@@ -9,14 +9,21 @@ module.exports = ({
     mode,
     entry: './src/index.ts',
     resolve: {
-        extensions: ['.js', '.json', '.ts', '.tsx']
+        extensions: ['.js', '.json', '.ts', '.tsx', '.jsx']
     },
     module: {
         rules: [{
-            
-                test: /\.(jsx|tsx|js|ts)$/,
+
+                test: /\.(tsx|ts)$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(jsx|js)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
             },
 
             {
