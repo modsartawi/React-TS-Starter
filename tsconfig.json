@@ -10,7 +10,7 @@
     "declaration": false,
     "removeComments": true,
     "noImplicitReturns": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "strict": true,
     "outDir": "build",
