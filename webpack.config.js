@@ -9,12 +9,12 @@ module.exports = ({
 }) => webpackMerge({
     mode,
     entry: './src/index.ts',
-    output: {
+   output: {
         path: outPath,
         filename: 'bundle.js',
         chunkFilename: '[chunkhash].js',
         publicPath: '/'
-    },
+    }, 
     resolve: {
         extensions: ['.js', '.json', '.ts', '.tsx', '.jsx']
     },

@@ -8,8 +8,10 @@ import { RouteComponentProps } from 'react-router';
 import { TestState } from '../store/reducers/testReducer';
 import { increment, decrement } from '../store/actions/testActions';
 import { ActionType } from '../store/actions';
- 
+ import MyGrid from '../components/MyGrid'
 import {reduxForm,  InjectedFormProps, Field} from 'redux-form';
+ 
+  
  
 
 import DateInput from '../common/form/DateInput';
@@ -38,6 +40,7 @@ class Lay extends React.Component<Props > {
     
     return (
       <div>
+        <MyGrid />
          <p>{format(new Date(), 'YYYY-MM-dd hh:mm a')}</p> 
         <Field component={DateInput} name="myDate" />
         <h1>{this.props.test!.data}</h1>

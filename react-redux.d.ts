@@ -1,5 +1,9 @@
 import 'react-redux';
-
+import 'redux-form';
+import { Field  } from 'redux-form';
+import { GenericFieldHTMLAttributes } from 'redux-form';
+import { Component } from 'react';
+import { BaseFieldProps } from 'redux-form';
 declare module 'react-redux' {
   // Add removed inferrable type to support connect as decorator
   // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/16652
@@ -18,3 +22,8 @@ declare module 'react-redux' {
     ): InferableComponentDecorator<TOwnProps>;
   }
 }
+
+
+ 
+  export class FieldDeclare extends Field {} 
+

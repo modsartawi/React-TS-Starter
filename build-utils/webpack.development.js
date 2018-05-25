@@ -3,7 +3,7 @@ var sourcePath = path.join(__dirname, '../src');
 
 
 module.exports = () => ({
-   
+
     module: {
         rules: [{
             test: /\.css$/,
