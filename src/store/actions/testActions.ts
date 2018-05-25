@@ -1,4 +1,4 @@
-import { DECREMENT, INCREEMENT, ADD } from './action-types';
+import { DECREMENT, INCREEMENT, ADD, START_FETCH } from './action-types';
 import { ActionType } from '../actions';
 export const increment: ActionType = () => {
   return {
@@ -18,3 +18,10 @@ export const add: ActionType<number> = (payload: number) => {
     payload
   };
 };
+
+
+export const startFetch : ActionType = () => {
+  return {
+    type: START_FETCH
+  }
+}

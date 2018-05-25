@@ -186,6 +186,12 @@
     "@types/react" "*"
     redux "^3.6.0"
 
+"@types/redux-thunk@^2.1.0":
+  version "2.1.0"
+  resolved "http://registry.npmjs.org/@types/redux-thunk/-/redux-thunk-2.1.0.tgz#bc2b6e972961831afb82a9bf4f06726e351f9416"
+  dependencies:
+    redux-thunk "*"
+
 "@types/revalidate@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@types/revalidate/-/revalidate-1.1.2.tgz#262596afcca92ff35c49acb74d266cb082d8bf36"
@@ -5663,6 +5669,14 @@ redux-form@^7.3.0:
     lodash-es "^4.17.5"
     prop-types "^15.6.1"
 
+redux-observable@^1.0.0-alpha.2:
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.0.0-alpha.2.tgz#86ac0d04f17992ad7aff6023d8b3ecc034c7de2f"
+
+redux-thunk@*, redux-thunk@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
+
 redux@^3.6.0, redux@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
@@ -5883,7 +5897,7 @@ rxjs@^5.5.2:
   dependencies:
     symbol-observable "1.0.1"
 
-rxjs@^6.1.0:
+rxjs@^6.1.0, rxjs@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.2.0.tgz#e024d0e180b72756a83c2aaea8f25423751ba978"
   dependencies:

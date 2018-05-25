@@ -6,7 +6,7 @@ import format from 'date-fns/format';
 import { bindActionCreators, Dispatch } from 'redux';
 import { RouteComponentProps } from 'react-router';
 import { TestState } from '../store/reducers/testReducer';
-import { increment, decrement } from '../store/actions/testActions';
+import { increment, decrement, startFetch  } from '../store/actions/testActions';
 import { ActionType } from '../store/actions';
  import MyGrid from '../components/MyGrid'
 import {reduxForm,  InjectedFormProps, Field} from 'redux-form';
@@ -20,6 +20,8 @@ export interface Props extends Partial<RouteComponentProps<void>>, InjectedFormP
   test?: TestState;
   increment?: ActionType;
   decrement?: ActionType;
+  startFetch? : ActionType;
+
 }
 
 
@@ -33,7 +35,7 @@ const validate = combineValidators({
     test: state.test
   }),
   (dispatch: Dispatch): Pick<Props, 'increment' | 'decrement'> =>
-    bindActionCreators({ increment, decrement }, dispatch)
+    bindActionCreators({ increment, decrement, startFetch }, dispatch)
 )
 class Lay extends React.Component<Props > {
   render() {
@@ -44,7 +46,7 @@ class Lay extends React.Component<Props > {
          <p>{format(new Date(), 'YYYY-MM-dd hh:mm a')}</p> 
         <Field component={DateInput} name="myDate" />
         <h1>{this.props.test!.data}</h1>
-        <button onClick={this.props.increment} />
+        <button onClick={this.props.startFetch} />
       </div>
     );
   }

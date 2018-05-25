@@ -3,11 +3,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import {routerMiddleware} from 'react-router-redux';
 import { History } from 'history';
 import rootReducer from './reducers/rootReducer'
+import {createEpicMiddleware} from  'redux-observable'
+export const configureStore = (history: History, rootEpic?:any,  preloadedState? : any) => {
+ 
+  const middlewares :any[] = [routerMiddleware(history), createEpicMiddleware(rootEpic)] ;
 
-export const configureStore = (history: History, preloadedState? : any) => {
-  const middlewares :any[] = [routerMiddleware(history)] ;
   const middlewareEnhancer = applyMiddleware(...middlewares);
-
   const storeEnhancers = [middlewareEnhancer];
 
   const composedEnhancer  = composeWithDevTools(...storeEnhancers);
