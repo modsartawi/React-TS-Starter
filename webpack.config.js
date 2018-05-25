@@ -1,13 +1,20 @@
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const envConfig = (mode) => require(`./build-utils/webpack.${mode}`)(mode);
-
+var path = require('path');
+var outPath = path.join(__dirname, './dist');
 
 module.exports = ({
     mode
 }) => webpackMerge({
     mode,
     entry: './src/index.ts',
+    output: {
+        path: outPath,
+        filename: 'bundle.js',
+        chunkFilename: '[chunkhash].js',
+        publicPath: '/'
+    },
     resolve: {
         extensions: ['.js', '.json', '.ts', '.tsx', '.jsx']
     },
