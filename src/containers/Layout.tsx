@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { AppState } from 'store/reducers/rootReducer';
 import { decrement, increment, add } from '../store/actions/testActions';
-import { ActionType } from '../store/actions';
+import { ActionTypeFn } from '../store/actions';
 import {  RouteComponentProps, Link } from 'react-router-dom';
 // import {History} from 'history';
 import { reduxForm, InjectedFormProps, Field } from 'redux-form';
@@ -25,9 +25,9 @@ interface OwnProps extends InjectedFormProps<Partial<Customer>> {}
 interface StateProps {
  
   data?: number;
-  increment?: ActionType;
-  decrement?: ActionType;
-  add?: ActionType<number>;
+  increment?: ActionTypeFn;
+  decrement?: ActionTypeFn;
+  add?: ActionTypeFn<number>;
 }
 
 const mapProps = (state: AppState): StateProps => ({

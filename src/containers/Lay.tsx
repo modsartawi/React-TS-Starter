@@ -7,7 +7,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { RouteComponentProps } from 'react-router';
 import { TestState } from '../store/reducers/testReducer';
 import { increment, decrement, startFetch  } from '../store/actions/testActions';
-import { ActionType } from '../store/actions';
+import { ActionTypeFn } from '../store/actions';
  import MyGrid from '../components/MyGrid'
 import {reduxForm,  InjectedFormProps, Field} from 'redux-form';
  
@@ -18,9 +18,9 @@ import DateInput from '../common/form/DateInput';
 import {combineValidators, isRequired} from 'revalidate';
 export interface Props extends Partial<RouteComponentProps<void>>, InjectedFormProps<{}> {
   test?: TestState;
-  increment?: ActionType;
-  decrement?: ActionType;
-  startFetch? : ActionType;
+  increment?: ActionTypeFn;
+  decrement?: ActionTypeFn;
+  startFetch? : ActionTypeFn;
 
 }
 
