@@ -5,7 +5,8 @@ import { hot } from 'react-hot-loader';
 
  const App = hot(module)(() => (
   <Switch>
-    <Loy      />
+   
+    <Loy     />
     <Route path="/:rootId" component={Loy} />
   </Switch>
 ));
