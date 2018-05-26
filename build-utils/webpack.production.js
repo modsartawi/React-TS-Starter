@@ -3,9 +3,15 @@ var path = require('path');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
+ 
+var outPath = path.join(__dirname, '../dist');
 module.exports = () => ({
-   
+    output: {
+        path: outPath,
+        filename: 'bundle.js',
+        chunkFilename: '[chunkhash].js'
+    }, 
+    
     module: {
         rules: [
             {

@@ -2,8 +2,14 @@ const path = require('path')
 var sourcePath = path.join(__dirname, '../src');
 
 
+var outPath = path.join(__dirname, '../dist');
 module.exports = () => ({
-
+    output: {
+        path: outPath,
+        filename: 'bundle.js',
+        chunkFilename: '[chunkhash].js',
+        publicPath: '/'
+    }, 
     module: {
         rules: [{
             test: /\.css$/,
